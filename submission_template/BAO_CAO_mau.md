@@ -1,6 +1,6 @@
 # Báo cáo lab: chọn tracker cho 5 video
 
-**Nhóm:** ………………………… **Thành viên:** …………………………
+**Nhóm:** Cá nhân **Thành viên:** Tran Cao Quoc Dinh — MSSV: 2A202602939
 
 Detector cố định: `yolo26n.pt`, ảnh 640 px, Re-ID `osnet_x0_25_msmt17`. Không đổi các mục này trong bài nộp chính.
 
@@ -30,11 +30,6 @@ HOTA: 26.911 · MOTA: 17.297 · IDF1: 25.714 (video_1, ByteTrack, conf=0.3, iou=
 
 Ở video_1, ByteTrack có độ chính xác hộp cao trên các hộp đã phát hiện (precision 96.917%) nhưng độ bao phủ thấp (recall 17.932%), thể hiện qua MOTA 17.297 và HOTA 26.911. Cảnh camera tĩnh giúp theo chuyển động hoạt động ổn định, nhưng người nhỏ hoặc bị che khuất vẫn bị bỏ sót. Với video_2, cảnh tối và rất đông làm việc giữ hộp quan trọng hơn; conf=0.3 là mức cân bằng giữa bỏ sót và nhiễu. Các video camera di động và rung lắc có thể hưởng lợi từ tracker có Re-ID trong lần thử tiếp theo.
 
-Với **ít nhất hai video** (nên gồm một video bạn chỉ đánh giá bằng mắt), viết 3–5 câu:
-
-- Tracker đã chọn giữ ID tốt hơn, hay ít hộp giả hơn, ở điểm nào bạn nhìn thấy?
-- Cảnh đó (đứng yên / chuyển động, đông / thưa, sáng / tối, trong nhà / ngoài trời) khiến tracker này hợp hơn tracker kia như thế nào?
-
 ## 4. Nếu có thêm thời gian
 
-Một hoặc hai câu: bạn sẽ thử tiếp điều gì (Re-ID khác, quét `conf` mịn hơn, xem frame gây lỗi…).
+Nếu có thêm thời gian, tôi sẽ so sánh ByteTrack với StrongSORT ở video_2 và video_5 để kiểm tra Re-ID có giảm đổi ID khi người đi ngang nhau hay không. Tôi cũng sẽ quét `conf` mịn hơn quanh 0.2–0.4 và xem các frame gây bỏ sót nhiều nhất.
